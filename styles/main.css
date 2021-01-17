@@ -8,8 +8,27 @@
     'projects tasks';
 }
 
-.projectDiv {
+#projects {
     grid-area: projects;
+}
 
+#tasks {
+    grid-area: tasks;
+}
+
+#header-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.inputDiv {
+    
+}
+
+.projectDiv {
     font-size: 24px;
+}
+
+.taskDiv {
+
 }
