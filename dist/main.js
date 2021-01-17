@@ -26,7 +26,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addProjectElement\": () => /* binding */ addProjectElement\n/* harmony export */ });\nfunction addProjectElement(projectObj) {\n    let project= document.createElement('div');\n    project.textContent= `${projectObj.name}`;\n    project.classList.add('projectDiv');\n\n    let content= document.getElementById('content');\n    content.appendChild(project);\n}\n\n\n\n//# sourceURL=webpack://todo-list/./src/dom.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addProjectElement\": () => /* binding */ addProjectElement,\n/* harmony export */   \"renderTasKElement\": () => /* binding */ renderTasKElement\n/* harmony export */ });\nfunction addProjectElement(projectObj) {\n    let project= document.createElement('div');\n    project.textContent= `${projectObj.name}`;\n    project.classList.add('projectDiv');\n\n    let projects= document.getElementById('projects');\n    projects.appendChild(project);\n}\n\nfunction renderTasKElement(taskObj) {\n    let task= document.createElement('div');\n    //all propreties\n    task.textContent= `${taskObj.title}`;\n    task.classList.add('taskDiv');\n\n    let tasks= document.getElementById('tasks');\n    tasks.appendChild(task);\n}\n\n\n\n\n//# sourceURL=webpack://todo-list/./src/dom.js?");
+
+/***/ }),
+
+/***/ "./src/event-listener.js":
+/*!*******************************!*\
+  !*** ./src/event-listener.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"EVaddProjBtn\": () => /* binding */ EVaddProjBtn\n/* harmony export */ });\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom */ \"./src/dom.js\");\n/* harmony import */ var _create__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./create */ \"./src/create.js\");\n/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./storage */ \"./src/storage.js\");\n\n\n\n\nfunction EVaddProjBtn() {\n    let addProjBtn= document.getElementById('add-proj-btn');\n    addProjBtn.addEventListener('click', function() {\n        if(document.querySelector('.inputDiv')==null) {\n            let projects= document.getElementById('projects');\n            let headerWrap= document.querySelector('#header-wrapper');\n\n            let inputDiv= document.createElement('div');\n            inputDiv.classList.add('inputDiv');\n            headerWrap.after(inputDiv);\n\n            let titleInput= document.createElement('input');\n            titleInput.setAttribute('type', 'text');\n            titleInput.setAttribute('placeholder', 'Title');\n            inputDiv.appendChild(titleInput);\n\n            let submit= document.createElement('button');\n            submit.textContent= 'Add';\n            submit.addEventListener('click', function() {\n                let obj= (0,_create__WEBPACK_IMPORTED_MODULE_1__.createProject)(titleInput.value);\n                (0,_storage__WEBPACK_IMPORTED_MODULE_2__.saveProjectToStorage)(obj);\n                (0,_dom__WEBPACK_IMPORTED_MODULE_0__.addProjectElement)(obj);\n\n                projects.removeChild(inputDiv);\n            })\n            inputDiv.appendChild(submit);\n\n            let cancel= document.createElement('button');\n            cancel.textContent= 'Cancel';\n            cancel.addEventListener('click', function() {\n                projects.removeChild(inputDiv);\n            })\n            inputDiv.appendChild(cancel);\n        }\n    })\n}\n\nfunction EVaddTaskBtn() {\n    let addTaskBtn= document.getElementById('add-task-btn');\n    addTaskBtn.addEventListener('click', function() {\n\n    })\n}\n\n\n\n//# sourceURL=webpack://todo-list/./src/event-listener.js?");
 
 /***/ }),
 
@@ -36,7 +46,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _create__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./create */ \"./src/create.js\");\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dom */ \"./src/dom.js\");\n\n\n\nlet sport= (0,_create__WEBPACK_IMPORTED_MODULE_0__.createProject)('sport');\n\nlet football= (0,_create__WEBPACK_IMPORTED_MODULE_0__.createTask)('football', 'ball with foot', 'wednesday', 'urgent', 'todo');\n\n(0,_create__WEBPACK_IMPORTED_MODULE_0__.addTaskToProject)(sport, football);\n\n(0,_dom__WEBPACK_IMPORTED_MODULE_1__.addProjectElement)(sport);\n\nconsole.log(sport);\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _create__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./create */ \"./src/create.js\");\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dom */ \"./src/dom.js\");\n/* harmony import */ var _event_listener__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./event-listener */ \"./src/event-listener.js\");\n\n\n\n\nlet sport= (0,_create__WEBPACK_IMPORTED_MODULE_0__.createProject)('sport');\n\nlet football= (0,_create__WEBPACK_IMPORTED_MODULE_0__.createTask)('football', 'ball with foot', 'wednesday', 'urgent', 'todo');\n\nlet basketball= (0,_create__WEBPACK_IMPORTED_MODULE_0__.createTask)('basket', 'ball in hoop', 'saturday', 'non-urgent', 'done');\n\n(0,_create__WEBPACK_IMPORTED_MODULE_0__.addTaskToProject)(sport, football);\n(0,_create__WEBPACK_IMPORTED_MODULE_0__.addTaskToProject)(sport, basketball);\n\n(0,_dom__WEBPACK_IMPORTED_MODULE_1__.addProjectElement)(sport);\n\n(0,_dom__WEBPACK_IMPORTED_MODULE_1__.renderTasKElement)(sport['0']);\n(0,_dom__WEBPACK_IMPORTED_MODULE_1__.renderTasKElement)(sport['1']);\n\n(0,_event_listener__WEBPACK_IMPORTED_MODULE_2__.EVaddProjBtn)();\n\nconsole.log(sport);\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/storage.js":
+/*!************************!*\
+  !*** ./src/storage.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"saveProjectToStorage\": () => /* binding */ saveProjectToStorage\n/* harmony export */ });\nlet projectStorage= [];\n\nfunction saveProjectToStorage(project) {\n    projectStorage.push(project);\n    console.log(projectStorage);\n}\n\n\n\n//# sourceURL=webpack://todo-list/./src/storage.js?");
 
 /***/ })
 
