@@ -5,12 +5,12 @@ import {saveProjectToStorage} from './storage'
 function EVaddProjBtn() {
     let addProjBtn= document.getElementById('add-proj-btn');
     addProjBtn.addEventListener('click', function() {
-        if(document.querySelector('.inputDiv')==null) {
+        if(document.querySelector('.inputProjDiv')==null) {
             let projects= document.getElementById('projects');
             let headerWrap= document.querySelector('#header-wrapper');
 
             let inputDiv= document.createElement('div');
-            inputDiv.classList.add('inputDiv');
+            inputDiv.classList.add('inputProjDiv');
             headerWrap.after(inputDiv);
 
             let titleInput= document.createElement('input');
@@ -42,7 +42,10 @@ function EVaddProjBtn() {
 function EVaddTaskBtn() {
     let addTaskBtn= document.getElementById('add-task-btn');
     addTaskBtn.addEventListener('click', function() {
-
+        //create task
+        //get current project
+        //add task to project
+        //dipslay tasks
     })
 }
 

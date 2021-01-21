@@ -3,6 +3,18 @@ function addProjectElement(projectObj) {
     project.textContent= `${projectObj.name}`;
     project.classList.add('projectDiv');
 
+    project.addEventListener('click', function() {
+        //clear tasks div
+
+        let tasksHeader= document.getElementById('tasks-header');
+        tasksHeader.textContent= projectObj.name;
+
+        for(let i=0; i<projectObj.length; i++) {
+            console.log('rendering tasks');
+            renderTasKElement(projectObj[i]);
+        }
+    })
+
     let projects= document.getElementById('projects');
     projects.appendChild(project);
 }

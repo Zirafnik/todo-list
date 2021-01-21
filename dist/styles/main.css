@@ -21,12 +21,14 @@
     flex-direction: row;
 }
 
-.inputDiv {
-    
+.inputProjDiv {
+
 }
 
 .projectDiv {
     font-size: 24px;
+
+    cursor: pointer;
 }
 
 .taskDiv {
