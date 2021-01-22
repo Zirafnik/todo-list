@@ -3,16 +3,22 @@ function addProjectElement(projectObj) {
     project.textContent= `${projectObj.name}`;
     project.classList.add('projectDiv');
 
+    //EV for changing projects
     project.addEventListener('click', function() {
-        //clear tasks div
+        //remove tasks
+        let tasksDiv= document.querySelector('#tasks');
+        while (tasksDiv.children.length > 1) {
+            tasksDiv.removeChild(tasksDiv.lastChild);
+        }
 
+        //change header
         let tasksHeader= document.getElementById('tasks-header');
         tasksHeader.textContent= projectObj.name;
 
-        for(let i=0; i<projectObj.length; i++) {
-            console.log('rendering tasks');
-            renderTasKElement(projectObj[i]);
-        }
+        //add tasks
+        projectObj.tasks.forEach(task => renderTaskElement(task));
+        
+        
     })
 
     let projects= document.getElementById('projects');
