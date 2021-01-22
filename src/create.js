@@ -15,11 +15,8 @@ function createTask(title, description, dueDate, priority, status) {
     }
 }
 
-let taskCounter= 0;
-
 function addTaskToProject(project, task) {
-    project[taskCounter]= task;
-    taskCounter++;
+    project.tasks.push(task);
 }
 
 export {createProject, createTask, addTaskToProject};

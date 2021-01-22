@@ -19,7 +19,7 @@ function addProjectElement(projectObj) {
     projects.appendChild(project);
 }
 
-function renderTasKElement(taskObj) {
+function renderTaskElement(taskObj) {
     let task= document.createElement('div');
     //all propreties
     task.textContent= `${taskObj.title}`;
@@ -30,4 +30,4 @@ function renderTasKElement(taskObj) {
 }
 
 
-export {addProjectElement, renderTasKElement};
+export {addProjectElement, renderTaskElement};
