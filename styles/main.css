@@ -10,10 +10,33 @@
 
 #projects {
     grid-area: projects;
+
+    background-color: aqua;
+}
+
+#projects-header {
+    width: 100%;
+    text-align: center;
+}
+
+.projectDiv {
+    font-size: 24px;
+
+    width: 100%;
+    text-align: center;
+
+    cursor: pointer;
 }
 
 #tasks {
     grid-area: tasks;
+
+    background-color: orange;
+}
+
+#tasks-header {
+    width: 100%;    
+    text-align: center;
 }
 
 #header-wrapper {
@@ -23,12 +46,6 @@
 
 .inputProjDiv {
 
-}
-
-.projectDiv {
-    font-size: 24px;
-
-    cursor: pointer;
 }
 
 .taskDiv {
