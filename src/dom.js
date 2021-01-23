@@ -29,15 +29,25 @@ function changeTaskHeader(projectObj) {
     tasksHeader.textContent= projectObj.name;
 }
 
-function renderTaskElement(taskObj) {
+function addTaskElement(taskObj) {
     let task= document.createElement('div');
-    //all propreties**
-    task.textContent= `${taskObj.title}`;
     task.classList.add('taskDiv');
+
+    //display propreties
+    for(let prop in taskObj) {
+        let span= document.createElement('span');
+        span.textContent= `${taskObj[prop]} `;
+        span.classList.add('span');
+        task.appendChild(span);
+    }
+
+    task.addEventListener('click', function(){
+        
+    })
 
     let tasks= document.getElementById('tasks');
     tasks.appendChild(task);
 }
 
 
-export {addProjectElement, changeTaskHeader, renderTaskElement};
+export {addProjectElement, changeTaskHeader, addTaskElement};

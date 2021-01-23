@@ -1,5 +1,5 @@
 import {createProject, createTask, addTaskToProject} from './create';
-import {addProjectElement, changeTaskHeader, renderTaskElement} from './dom';
+import {addProjectElement, changeTaskHeader, addTaskElement} from './dom';
 import {EVaddProjBtn} from './event-listener'
 
 let sport= createProject('sport');
@@ -20,7 +20,7 @@ let burek= createTask('burek', 'sirov', 'tuesday', 'urgetn', 'done');
 addTaskToProject(food, burek);
 addProjectElement(food);
 
-sport.tasks.forEach(task => renderTaskElement(task));
+sport.tasks.forEach(task => addTaskElement(task));
 
 EVaddProjBtn();
 
