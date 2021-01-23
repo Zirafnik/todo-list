@@ -1,5 +1,5 @@
 import {createProject, createTask, addTaskToProject} from './create';
-import {addProjectElement, renderTaskElement} from './dom';
+import {addProjectElement, changeTaskHeader, renderTaskElement} from './dom';
 import {EVaddProjBtn} from './event-listener'
 
 let sport= createProject('sport');
@@ -11,6 +11,7 @@ addTaskToProject(sport, football);
 addTaskToProject(sport, basketball);
 
 addProjectElement(sport);
+changeTaskHeader(sport);
 
 
 

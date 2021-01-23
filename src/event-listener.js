@@ -42,10 +42,10 @@ function EVaddProjBtn() {
 function EVaddTaskBtn() {
     let addTaskBtn= document.getElementById('add-task-btn');
     addTaskBtn.addEventListener('click', function() {
-        //create task
-        //get current project
-        //add task to project
-        //dipslay tasks
+        //create task**
+        //get current project**
+        //add task to project**
+        //dipslay tasks**
     })
 }
 

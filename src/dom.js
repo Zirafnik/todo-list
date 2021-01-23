@@ -11,9 +11,8 @@ function addProjectElement(projectObj) {
             tasksDiv.removeChild(tasksDiv.lastChild);
         }
 
-        //change header
-        let tasksHeader= document.getElementById('tasks-header');
-        tasksHeader.textContent= projectObj.name;
+        //change list header
+        changeTaskHeader(projectObj);
 
         //add tasks
         projectObj.tasks.forEach(task => renderTaskElement(task));
@@ -25,9 +24,14 @@ function addProjectElement(projectObj) {
     projects.appendChild(project);
 }
 
+function changeTaskHeader(projectObj) {
+    let tasksHeader= document.getElementById('tasks-header');
+    tasksHeader.textContent= projectObj.name;
+}
+
 function renderTaskElement(taskObj) {
     let task= document.createElement('div');
-    //all propreties
+    //all propreties**
     task.textContent= `${taskObj.title}`;
     task.classList.add('taskDiv');
 
@@ -36,4 +40,4 @@ function renderTaskElement(taskObj) {
 }
 
 
-export {addProjectElement, renderTaskElement};
+export {addProjectElement, changeTaskHeader, renderTaskElement};
