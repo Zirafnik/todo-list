@@ -49,13 +49,12 @@
 }
 
 .inputTaskDiv {
-    
+
 }
 
 .taskDiv {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
 }
 
 .span {

@@ -8,8 +8,10 @@
     -add trash button
     -display more detailed description**
     -edit task**
+    -(ability to move tasks around, within project)
+
+-task:
+    -diff color for different urgencies
 
 
 -local storage
-
--make task div a grid, so all spans 1fr of space
