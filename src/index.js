@@ -1,6 +1,7 @@
 import {createProject, createTask, addTaskToProject} from './create';
-import {addProjectElement, changeTaskHeader, addTaskElement} from './dom';
+import {addProjectElement, changeTaskHeader, addTaskElement, currentProject} from './dom';
 import {EVaddProjBtn, EVaddTaskBtn} from './event-listener'
+import {projectStorage, saveProjectToStorage} from './storage'
 
 let sport= createProject('sport');
 
@@ -22,10 +23,20 @@ addProjectElement(food);
 
 sport.tasks.forEach(task => addTaskElement(task));
 
+saveProjectToStorage(sport);
+
+saveProjectToStorage(food);
+
+
 EVaddProjBtn();
 EVaddTaskBtn();
 
 console.log(sport);
+
+
+currentProject= projectStorage[0];
+console.log(projectStorage.length);
+console.log(currentProject);
 
 
 //create.js --> objects.js**

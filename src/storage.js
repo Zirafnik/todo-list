@@ -7,4 +7,4 @@ function saveProjectToStorage(project) {
 
 //change task propreties**
 
-export {saveProjectToStorage};
+export {saveProjectToStorage, projectStorage};

@@ -5,12 +5,12 @@ function createProject(name) {
     }
 }
 
-function createTask(name, description, dueDate, priority, status) {
+function createTask(name, dueDate, priority, description, status) {
     return {
         name,
-        description,
         dueDate,
         priority,
+        description,
         status
     }
 }

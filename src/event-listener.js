@@ -55,11 +55,40 @@ function EVaddTaskBtn() {
             nameInput.setAttribute('placeholder', 'task name');
             inputDiv.appendChild(nameInput);
 
+            let dueDate= document.createElement('input');
+            dueDate.setAttribute('type', 'date');
+            dueDate.setAttribute('placeholder', 'due date');
+            inputDiv.appendChild(dueDate);
+
+            let priority= document.createElement('select');
+            let option1= document.createElement('option');
+            option1.value= 'very urgent';
+            option1.textContent= 'very urgent';
+            priority.appendChild(option1);
+
+            let option2= document.createElement('option');
+            option2.value= 'urgent';
+            option2.textContent= 'urgent';
+            priority.appendChild(option2);
+
+            let option3= document.createElement('option');
+            option3.value= 'non-urgent';
+            option3.textContent= 'non-urgent';
+            priority.appendChild(option3);
+
+            inputDiv.appendChild(priority);
+
+
+            let desription= document.createElement('input');
+            desription.setAttribute('type', 'text');
+            desription.setAttribute('placeholder', 'description');
+            inputDiv.appendChild(desription);
+            
             let submit= document.createElement('button');
             submit.textContent= 'Add';
             submit.addEventListener('click', function() {
-                let objTask= createTask(nameInput.value, 'burek', 'burek', 'burek', 'burek');
-                
+                let objTask= createTask(nameInput.value, dueDate.value, priority.value, desription.value, false);
+                console.log(currentProject);
                 addTaskToProject(currentProject, objTask);
 
                 addTaskElement(objTask);
