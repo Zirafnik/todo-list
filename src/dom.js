@@ -1,4 +1,7 @@
-let currentProject;
+let currentProject= null;
+function setFirstCurrentProject(proj) {
+    currentProject= proj;
+}
 
 function addProjectElement(projectObj) {
     let project= document.createElement('div');
@@ -35,6 +38,15 @@ function addTaskElement(taskObj) {
     let task= document.createElement('div');
     task.classList.add('taskDiv');
 
+    let completeBtn= document.createElement('button');
+    completeBtn.textContent= 'Done';
+    completeBtn.addEventListener('click', function() {
+        task.style.backgroundColor= 'lightgray';
+        task.style.textDecoration= 'line-through';
+    })
+
+    task.appendChild(completeBtn);
+
     //display propreties
     for(let prop in taskObj) {
         let span= document.createElement('span');
@@ -42,8 +54,6 @@ function addTaskElement(taskObj) {
         span.classList.add('span');
         task.appendChild(span);
     }
-
-    //add complete button**
 
     task.addEventListener('click', function(){
         //display more detailed description**
@@ -56,4 +66,4 @@ function addTaskElement(taskObj) {
 }
 
 
-export {addProjectElement, changeTaskHeader, addTaskElement, currentProject};
+export {addProjectElement, changeTaskHeader, addTaskElement, currentProject, setFirstCurrentProject};

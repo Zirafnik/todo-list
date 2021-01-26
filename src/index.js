@@ -1,5 +1,5 @@
 import {createProject, createTask, addTaskToProject} from './create';
-import {addProjectElement, changeTaskHeader, addTaskElement, currentProject} from './dom';
+import {addProjectElement, changeTaskHeader, addTaskElement, currentProject, setFirstCurrentProject} from './dom';
 import {EVaddProjBtn, EVaddTaskBtn} from './event-listener'
 import {projectStorage, saveProjectToStorage} from './storage'
 
@@ -34,9 +34,7 @@ EVaddTaskBtn();
 console.log(sport);
 
 
-currentProject= projectStorage[0];
-console.log(projectStorage.length);
-console.log(currentProject);
+setFirstCurrentProject(projectStorage[0]);
 
 
 //create.js --> objects.js**
