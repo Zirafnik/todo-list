@@ -43,6 +43,7 @@ function addTaskElement(taskObj) {
     completeBtn.addEventListener('click', function() {
         task.style.backgroundColor= 'lightgray';
         task.style.textDecoration= 'line-through';
+        task.classList.add('completed');
     })
 
     task.appendChild(completeBtn);

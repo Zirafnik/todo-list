@@ -57,6 +57,11 @@
     grid-template-columns: repeat(5, 1fr);
 }
 
+.completed {
+    background-image: linear-gradient(135deg, gray 25%, transparent 25%, transparent 50%, gray 50%, gray 75%, transparent 75%, transparent 100%);
+    background-size: 45px 45px;
+}
+
 .span {
     
 }
