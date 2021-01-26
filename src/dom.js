@@ -1,3 +1,5 @@
+let currentProject;
+
 function addProjectElement(projectObj) {
     let project= document.createElement('div');
     project.textContent= `${projectObj.name}`;
@@ -15,9 +17,9 @@ function addProjectElement(projectObj) {
         changeTaskHeader(projectObj);
 
         //add tasks
-        projectObj.tasks.forEach(task => renderTaskElement(task));
+        projectObj.tasks.forEach(task => addTaskElement(task));  
         
-        
+        currentProject= projectObj;
     })
 
     let projects= document.getElementById('projects');
@@ -41,8 +43,12 @@ function addTaskElement(taskObj) {
         task.appendChild(span);
     }
 
+    //add complete button**
+
     task.addEventListener('click', function(){
-        
+        //display more detailed description**
+        //edit task**
+        //delete task**
     })
 
     let tasks= document.getElementById('tasks');
@@ -50,4 +56,4 @@ function addTaskElement(taskObj) {
 }
 
 
-export {addProjectElement, changeTaskHeader, addTaskElement};
+export {addProjectElement, changeTaskHeader, addTaskElement, currentProject};

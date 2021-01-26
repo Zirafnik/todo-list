@@ -39,13 +39,17 @@
     text-align: center;
 }
 
-#header-wrapper {
+.header-wrapper {
     display: flex;
     flex-direction: row;
 }
 
 .inputProjDiv {
 
+}
+
+.inputTaskDiv {
+    
 }
 
 .taskDiv {

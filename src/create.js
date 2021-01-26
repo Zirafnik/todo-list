@@ -5,9 +5,9 @@ function createProject(name) {
     }
 }
 
-function createTask(title, description, dueDate, priority, status) {
+function createTask(name, description, dueDate, priority, status) {
     return {
-        title,
+        name,
         description,
         dueDate,
         priority,

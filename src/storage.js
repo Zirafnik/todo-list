@@ -5,4 +5,6 @@ function saveProjectToStorage(project) {
     console.log(projectStorage);
 }
 
+//change task propreties**
+
 export {saveProjectToStorage};

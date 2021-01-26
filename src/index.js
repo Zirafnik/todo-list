@@ -1,6 +1,6 @@
 import {createProject, createTask, addTaskToProject} from './create';
 import {addProjectElement, changeTaskHeader, addTaskElement} from './dom';
-import {EVaddProjBtn} from './event-listener'
+import {EVaddProjBtn, EVaddTaskBtn} from './event-listener'
 
 let sport= createProject('sport');
 
@@ -23,9 +23,10 @@ addProjectElement(food);
 sport.tasks.forEach(task => addTaskElement(task));
 
 EVaddProjBtn();
+EVaddTaskBtn();
 
 console.log(sport);
 
 
-//create.js --> objects.js
-//join dom and EV .js
+//create.js --> objects.js**
+//join dom and EV .js**
