@@ -4,7 +4,6 @@
 -change task propreties
 
 -task EV:
-    -add complete button**
     -add trash button
     -display more detailed description**
     -edit task**

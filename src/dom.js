@@ -44,12 +44,17 @@ function addTaskElement(taskObj) {
         task.style.backgroundColor= 'lightgray';
         task.style.textDecoration= 'line-through';
         task.classList.add('completed');
+
+        taskObj.status= true;
     })
 
     task.appendChild(completeBtn);
 
     //display propreties
     for(let prop in taskObj) {
+        if(prop=='description') {
+            continue;
+        }
         let span= document.createElement('span');
         span.textContent= `${taskObj[prop]} `;
         span.classList.add('span');
@@ -57,7 +62,18 @@ function addTaskElement(taskObj) {
     }
 
     task.addEventListener('click', function(){
-        //display more detailed description**
+        console.log(task.querySelector('.description'));
+        if(task.querySelector('.description')==null && taskObj.status==false) {
+            let description= document.createElement('span');
+            description.textContent= `${taskObj.description}`;
+            description.classList.add('description');
+            task.appendChild(description);
+        } else {
+            let description= task.querySelector('.description');
+            task.removeChild(description);
+        }
+        
+
         //edit task**
         //delete task**
     })

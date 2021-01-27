@@ -5,8 +5,8 @@ import {projectStorage, saveProjectToStorage} from './storage'
 
 let sport= createProject('sport');
 
-let football= createTask('football', 'ball with foot', 'wednesday', 'urgent', 'todo');
-let basketball= createTask('basket', 'ball in hoop', 'saturday', 'non-urgent', 'done');
+let football= createTask('football', 'ball with foot', 'wednesday', 'urgent', false);
+let basketball= createTask('basket', 'ball in hoop', 'saturday', 'non-urgent', false);
 
 addTaskToProject(sport, football);
 addTaskToProject(sport, basketball);
@@ -17,7 +17,7 @@ changeTaskHeader(sport);
 
 
 let food= createProject('food');
-let burek= createTask('burek', 'sirov', 'tuesday', 'urgetn', 'done');
+let burek= createTask('burek', 'sirov', 'tuesday', 'urgetn', false);
 addTaskToProject(food, burek);
 addProjectElement(food);
 
