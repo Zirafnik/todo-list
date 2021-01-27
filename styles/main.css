@@ -55,6 +55,16 @@
 .taskDiv {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    grid-row: 1fr 1fr;
+    grid-template-areas: 
+    ". . . . ."
+    "desc desc desc desc desc";
+
+    cursor: pointer;
+}
+
+.description {
+    grid-area: desc;
 }
 
 .completed {
