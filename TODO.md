@@ -5,7 +5,6 @@
 
 -task EV:
     -add trash button
-    -display more detailed description**
     -edit task**
     -(ability to move tasks around, within project)
 

@@ -63,7 +63,7 @@ function addTaskElement(taskObj) {
 
     task.addEventListener('click', function(){
         console.log(task.querySelector('.description'));
-        if(task.querySelector('.description')==null && taskObj.status==false) {
+        if(task.querySelector('.description')==null) {
             let description= document.createElement('span');
             description.textContent= `${taskObj.description}`;
             description.classList.add('description');
