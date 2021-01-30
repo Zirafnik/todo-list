@@ -13,3 +13,5 @@
 
 
 -local storage
+
+-edit && delete projects

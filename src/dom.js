@@ -52,7 +52,7 @@ function addTaskElement(taskObj) {
 
     //display propreties
     for(let prop in taskObj) {
-        if(prop=='description') {
+        if(prop=='description' || prop=='status') {
             continue;
         }
         let span= document.createElement('span');
@@ -72,11 +72,24 @@ function addTaskElement(taskObj) {
             let description= task.querySelector('.description');
             task.removeChild(description);
         }
-        
-
-        //edit task**
-        //delete task**
     })
+
+    let editBtn= document.createElement('button');
+    editBtn.textContent= 'Edit';
+    editBtn.addEventListener('click', function() {
+        //edit just strings??**
+    })
+
+
+    //use svg to load 
+    //change CSS to change color of svg on hover
+    let deleteBtn= document.createElement('svg');
+    deleteBtn.classList.add('deleteBtn');
+    deleteBtn.addEventListener('click', function() {
+        let tasks= document.getElementById('tasks');
+        tasks.removeChild(task);
+    })
+    task.appendChild(deleteBtn);
 
     let tasks= document.getElementById('tasks');
     tasks.appendChild(task);
