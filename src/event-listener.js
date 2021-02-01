@@ -16,9 +16,14 @@ function EVaddProjBtn() {
             let titleInput= document.createElement('input');
             titleInput.setAttribute('type', 'text');
             titleInput.setAttribute('placeholder', 'Title');
+            titleInput.classList.add('inputElem');
             inputDiv.appendChild(titleInput);
 
+            let buttonsDiv= document.createElement('div');
+            buttonsDiv.classList.add('buttonsDiv');
+
             let submit= document.createElement('button');
+            submit.classList.add('inputElem');
             submit.textContent= 'Add';
             submit.addEventListener('click', function() {
                 let objProj= createProject(titleInput.value);
@@ -27,14 +32,17 @@ function EVaddProjBtn() {
 
                 projects.removeChild(inputDiv);
             })
-            inputDiv.appendChild(submit);
+            buttonsDiv.appendChild(submit);
 
             let cancel= document.createElement('button');
+            cancel.classList.add('inputElem');
             cancel.textContent= 'Cancel';
             cancel.addEventListener('click', function() {
                 projects.removeChild(inputDiv);
             })
-            inputDiv.appendChild(cancel);
+            buttonsDiv.appendChild(cancel);
+
+            inputDiv.appendChild(buttonsDiv);
         }
     })
 }
@@ -51,16 +59,19 @@ function EVaddTaskBtn() {
             headerWrap.after(inputDiv);
 
             let nameInput= document.createElement('input');
+            nameInput.classList.add('inputElem');
             nameInput.setAttribute('type', 'text');
             nameInput.setAttribute('placeholder', 'task name');
             inputDiv.appendChild(nameInput);
 
             let dueDate= document.createElement('input');
+            dueDate.classList.add('inputElem');
             dueDate.setAttribute('type', 'date');
             dueDate.setAttribute('placeholder', 'due date');
             inputDiv.appendChild(dueDate);
 
             let priority= document.createElement('select');
+            priority.classList.add('inputElem');
             let option1= document.createElement('option');
             option1.value= 'very urgent';
             option1.textContent= 'very urgent';
@@ -80,11 +91,17 @@ function EVaddTaskBtn() {
 
 
             let desription= document.createElement('input');
+            desription.classList.add('inputElem');
+            desription.classList.add('description');
             desription.setAttribute('type', 'text');
             desription.setAttribute('placeholder', 'description');
             inputDiv.appendChild(desription);
+
+            let buttonsDiv= document.createElement('div');
+            buttonsDiv.classList.add('buttonsDiv');
             
             let submit= document.createElement('button');
+            submit.classList.add('inputElem');
             submit.textContent= 'Add';
             submit.addEventListener('click', function() {
                 let objTask= createTask(nameInput.value, dueDate.value, priority.value, desription.value, false);
@@ -95,14 +112,17 @@ function EVaddTaskBtn() {
 
                 tasks.removeChild(inputDiv);
             })
-            inputDiv.appendChild(submit);
+            buttonsDiv.appendChild(submit);
 
             let cancel= document.createElement('button');
+            cancel.classList.add('inputElem');
             cancel.textContent= 'Cancel';
             cancel.addEventListener('click', function() {
                 tasks.removeChild(inputDiv);
             })
-            inputDiv.appendChild(cancel);
+            buttonsDiv.appendChild(cancel);
+
+            inputDiv.appendChild(buttonsDiv);
         }
     })
 }
