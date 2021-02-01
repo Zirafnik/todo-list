@@ -1,5 +1,9 @@
 -create.js --> objects.js**
--join dom and EV .js**
+-ev.js to forms.js**
+
+-if click + again close form
+
+-chosen proj background div color;
 
 -change task propreties
 
