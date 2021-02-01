@@ -41,11 +41,20 @@ function addTaskElement(taskObj) {
     let completeBtn= document.createElement('button');
     completeBtn.textContent= 'Done';
     completeBtn.addEventListener('click', function() {
-        task.style.backgroundColor= 'lightgray';
         task.style.textDecoration= 'line-through';
         task.classList.add('completed');
 
         taskObj.status= true;
+    })
+
+    let over= false;
+    completeBtn.addEventListener('mouseover', function() {
+        over=true;
+        console.log(over);
+    })
+    completeBtn.addEventListener('mouseleave', function() {
+        over=false;
+        console.log(over);
     })
 
     task.appendChild(completeBtn);
@@ -62,13 +71,12 @@ function addTaskElement(taskObj) {
     }
 
     task.addEventListener('click', function(){
-        console.log(task.querySelector('.description'));
-        if(task.querySelector('.description')==null) {
+        if(task.querySelector('.description')==null && over==false) {
             let description= document.createElement('span');
             description.textContent= `${taskObj.description}`;
             description.classList.add('description');
             task.appendChild(description);
-        } else {
+        } else if(task.querySelector('.description') && over==false){
             let description= task.querySelector('.description');
             task.removeChild(description);
         }
@@ -81,8 +89,8 @@ function addTaskElement(taskObj) {
     })
 
 
-    //use svg to load 
-    //change CSS to change color of svg on hover
+    //use svg to load** 
+    //change CSS to change color of svg on hover**
     let deleteBtn= document.createElement('svg');
     deleteBtn.classList.add('deleteBtn');
     deleteBtn.addEventListener('click', function() {

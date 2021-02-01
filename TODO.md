@@ -3,6 +3,8 @@
 
 -if click + again close form
 
+-proj add + not round
+
 -chosen proj background div color;
 
 -change task propreties
