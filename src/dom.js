@@ -1,6 +1,11 @@
 let currentProject= null;
+let currentDiv= null;
 function setFirstCurrentProject(proj) {
     currentProject= proj;
+}
+
+function setFirstCurrentProjDiv() {
+    currentDiv= document.querySelectorAll('.projectDiv')[0];
 }
 
 function addProjectElement(projectObj) {
@@ -20,9 +25,14 @@ function addProjectElement(projectObj) {
         changeTaskHeader(projectObj);
 
         //add tasks
-        projectObj.tasks.forEach(task => addTaskElement(task));  
+        projectObj.tasks.forEach(task => addTaskElement(task));
         
+        currentDiv.classList.remove('projectDivClicked');
+
         currentProject= projectObj;
+        currentDiv= project;
+
+        project.classList.add('projectDivClicked');
     })
 
     let projects= document.getElementById('projects');
@@ -113,4 +123,4 @@ function addTaskElement(taskObj) {
 }
 
 
-export {addProjectElement, changeTaskHeader, addTaskElement, currentProject, setFirstCurrentProject};
+export {addProjectElement, changeTaskHeader, addTaskElement, currentProject, setFirstCurrentProject, setFirstCurrentProjDiv};
