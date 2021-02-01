@@ -16,6 +16,12 @@ html, body {
     grid-area: projects;
 
     background-color: gray;
+
+    border-right: 4px solid black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #projects-header {
@@ -39,6 +45,9 @@ html, body {
     grid-area: tasks;
 
     background-color: lightgray;
+
+    display: flex;
+    flex-direction: column;
 }
 
 #tasks-header {
@@ -55,12 +64,37 @@ html, body {
     color: cyan;
 }
 
-.inputProjDiv {
+#proj-header-wrapper {
+    width: 100%;
+}
 
+.inputProjDiv {
+    width: 70%;
+
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: solid 2px black;
+    border-radius: 10px;
+
+    background: silver;
 }
 
 .inputTaskDiv {
+    display: flex;
+    flex-direction: column;
 
+    align-self: center;
+
+    width: 60%;
+
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+
+    background-color: gray;
 }
 
 .taskDiv {
