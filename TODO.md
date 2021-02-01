@@ -5,6 +5,8 @@
 
 -proj add + not round
 
+-load task colors
+
 -chosen proj background div color;
 
 -change task propreties
