@@ -43,6 +43,11 @@ function EVaddProjBtn() {
             buttonsDiv.appendChild(cancel);
 
             inputDiv.appendChild(buttonsDiv);
+
+        } else {
+            let projects= document.getElementById('projects');
+            let inputDiv= document.querySelector('.inputProjDiv');
+            projects.removeChild(inputDiv);
         }
     })
 }
@@ -123,6 +128,11 @@ function EVaddTaskBtn() {
             buttonsDiv.appendChild(cancel);
 
             inputDiv.appendChild(buttonsDiv);
+
+        } else {
+            let tasks= document.getElementById('tasks');
+            let inputDiv= document.querySelector('.inputTaskDiv');
+            tasks.removeChild(inputDiv);
         }
     })
 }
