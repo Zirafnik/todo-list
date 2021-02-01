@@ -41,6 +41,16 @@ html, body {
     font-size: 32px;
 }
 
+.projectDiv:hover {
+    color: purple;
+    background-color: silver;
+}
+
+.projectDivClicked {
+    color: purple;
+    background-color: silver;
+}
+
 #tasks {
     grid-area: tasks;
 
