@@ -122,6 +122,18 @@ html, body {
     cursor: pointer;
 }
 
+.very-urgent {
+    background-color: rgba(255, 0, 0, 0.767);
+}
+
+.urgent {
+    background-color: rgba(255, 0, 0, 0.418);
+}
+
+.non-urgent {
+    background-color: rgba(255, 0, 0, 0.253);
+}
+
 h2 {
     align-self: center;
     font-size: 36px;

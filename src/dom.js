@@ -38,6 +38,15 @@ function addTaskElement(taskObj) {
     let task= document.createElement('div');
     task.classList.add('taskDiv');
 
+    //urgency color background
+    if(taskObj.priority=='very urgent') {
+        task.classList.add('very-urgent');
+    } else if(taskObj.priority=='urgent') {
+        task.classList.add('urgent');
+    } else if(taskObj.priority=='non-urgent') {
+        task.classList.add('non-urgent');
+    }
+
     let completeBtn= document.createElement('button');
     completeBtn.textContent= 'Done';
     completeBtn.addEventListener('click', function() {
