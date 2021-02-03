@@ -244,3 +244,26 @@ button {
     align-self: center;
     justify-self: center;
 }
+
+#footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgb(82, 82, 82);
+    
+    padding: 10px;
+}
+
+#footer-text {
+    font-size: 22px;
+    margin-right: 12px;
+
+    color: white;
+}
+
+#github-image {
+    height: 35px;
+    width: 35px;
+}
