@@ -1,7 +1,3 @@
--local storage
-
--delete projects
-
 -README
 
  FUTURE DEV:

@@ -1,3 +1,5 @@
+import {deleteProject, removeTaskFromStorage} from './storage'
+
 let currentProject= null;
 let currentDiv= null;
 function setFirstCurrentProject(proj) {
@@ -10,11 +12,14 @@ function setFirstCurrentProjDiv() {
 
 function addProjectElement(projectObj) {
     let project= document.createElement('div');
+    project.id= projectObj.name;
     project.textContent= `${projectObj.name}`;
     project.classList.add('projectDiv');
 
     //EV for changing projects
     project.addEventListener('click', function() {
+        //do this only if project still exists
+        if(document.getElementById(projectObj.name)) {
         //remove tasks
         let tasksDiv= document.querySelector('#tasks');
         while (tasksDiv.children.length > 1) {
@@ -22,7 +27,7 @@ function addProjectElement(projectObj) {
         }
 
         //change list header
-        changeTaskHeader(projectObj);
+        changeTaskHeader(projectObj.name);
 
         //add tasks
         projectObj.tasks.forEach(task => addTaskElement(task));
@@ -33,15 +38,41 @@ function addProjectElement(projectObj) {
         currentDiv= project;
 
         project.classList.add('projectDivClicked');
+        }
     })
+
+    //delete button
+    let deleteBtn= document.createElement('button');
+    deleteBtn.classList.add('deleteBtn');
+
+    deleteBtn.addEventListener('click', function() {
+        //delete proj from storage
+        deleteProject(projectObj);
+
+        //remove tasks
+        let tasksDiv= document.querySelector('#tasks');
+        while (tasksDiv.children.length > 1) {
+            tasksDiv.removeChild(tasksDiv.lastChild);
+        }
+
+        //remove project
+        let projects= document.getElementById('projects');
+        projects.removeChild(project);
+
+        //remove task header
+        changeTaskHeader('');
+        
+    })
+    project.appendChild(deleteBtn);
 
     let projects= document.getElementById('projects');
     projects.appendChild(project);
 }
 
-function changeTaskHeader(projectObj) {
+function changeTaskHeader(projectObjName) {
     let tasksHeader= document.getElementById('tasks-header');
-    tasksHeader.textContent= projectObj.name;
+
+    tasksHeader.textContent= projectObjName;
 }
 
 function addTaskElement(taskObj) {
@@ -107,11 +138,13 @@ function addTaskElement(taskObj) {
     })
 
 
-    //SVG delete button
+    //delete button
     let deleteBtn= document.createElement('button');
     deleteBtn.classList.add('deleteBtn');
 
     deleteBtn.addEventListener('click', function() {
+        removeTaskFromStorage(taskObj, currentProject);
+
         let tasks= document.getElementById('tasks');
         tasks.removeChild(task);
     })

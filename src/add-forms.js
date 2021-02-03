@@ -1,6 +1,6 @@
 import {addProjectElement, addTaskElement, currentProject} from './dom'
-import {createProject, createTask, addTaskToProject} from './objects';
-import {saveProjectToStorage} from './storage'
+import {createProject, createTask} from './objects';
+import {saveProjectToStorage, addTaskToProject} from './storage'
 
 function EVaddProjBtn() {
     let addProjBtn= document.getElementById('add-proj-btn');

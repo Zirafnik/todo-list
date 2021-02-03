@@ -13,18 +13,42 @@ function getLocalStorage() {
 function updateLocalStorage() {
     window.localStorage.clear();
     window.localStorage.setItem('projectsData', JSON.stringify(projectStorage));  //JSON.stringify enumerates propreties, so it will not include non-enumerable
+
+    console.log(projectStorage);
 }   
 
 
 function saveProjectToStorage(project) {
     projectStorage.push(project);
-    console.log(projectStorage);
 
     updateLocalStorage();
 }
 
-function deleteProject() {
+function addTaskToProject(project, task) {
+    let projectIndex= projectStorage.indexOf(project);
 
+    projectStorage[projectIndex].tasks.push(task);
+
+    updateLocalStorage();
 }
 
-export {saveProjectToStorage, projectStorage};
+function deleteProject(project) {
+    let index= projectStorage.indexOf(project);
+    if (index > -1) {
+        projectStorage.splice(index, 1);
+    }
+
+    updateLocalStorage();
+}
+
+function removeTaskFromStorage(task, currentProject) {
+    let projectIndex= projectStorage.indexOf(currentProject);
+    let taskIndex= projectStorage[projectIndex].tasks.indexOf(task);
+    if (taskIndex > -1) {
+        projectStorage[projectIndex].tasks.splice(taskIndex, 1);
+    }
+
+    updateLocalStorage();
+}
+
+export {getLocalStorage, saveProjectToStorage, addTaskToProject, deleteProject, removeTaskFromStorage, projectStorage};

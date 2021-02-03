@@ -1,9 +1,16 @@
-import {createProject, createTask, addTaskToProject} from './objects';
+import {createProject, createTask} from './objects';
 import {addProjectElement, changeTaskHeader, addTaskElement, currentProject, setFirstCurrentProject, setFirstCurrentProjDiv} from './dom';
 import {EVaddProjBtn, EVaddTaskBtn} from './add-forms'
-import {projectStorage, saveProjectToStorage} from './storage'
+import {projectStorage, saveProjectToStorage, addTaskToProject, getLocalStorage} from './storage'
 
+getLocalStorage();
+
+EVaddProjBtn();
+EVaddTaskBtn();
+
+if(projectStorage.length == 0) {
 let sport= createProject('sport');
+saveProjectToStorage(sport);
 
 let football= createTask('football', 'ball with foot', 'wednesday', 'urgent', false);
 let basketball= createTask('basket', 'ball in hoop', 'saturday', 'non-urgent', false);
@@ -11,30 +18,21 @@ let basketball= createTask('basket', 'ball in hoop', 'saturday', 'non-urgent', f
 addTaskToProject(sport, football);
 addTaskToProject(sport, basketball);
 
-addProjectElement(sport);
-changeTaskHeader(sport);
-
-
 
 let food= createProject('food');
+saveProjectToStorage(food);
 let burek= createTask('burek', 'sirov', 'tuesday', 'urgetn', false);
 addTaskToProject(food, burek);
-addProjectElement(food);
-
-sport.tasks.forEach(task => addTaskElement(task));
-
-saveProjectToStorage(sport);
-
-saveProjectToStorage(food);
+}
 
 
-EVaddProjBtn();
-EVaddTaskBtn();
+//display projects
+projectStorage.forEach(proj => addProjectElement(proj));
+
+//display tasks
+changeTaskHeader(projectStorage[0].name);
+projectStorage[0].tasks.forEach(task => addTaskElement(task));
 
 
 setFirstCurrentProject(projectStorage[0]);
 setFirstCurrentProjDiv();
-
-
-//create.js --> objects.js**
-//join dom and EV .js**

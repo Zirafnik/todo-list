@@ -15,8 +15,5 @@ function createTask(name, dueDate, priority, description, status) {
     }
 }
 
-function addTaskToProject(project, task) {
-    project.tasks.push(task);
-}
 
-export {createProject, createTask, addTaskToProject};
+export {createProject, createTask};
