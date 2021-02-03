@@ -119,6 +119,11 @@ html, body {
     font-size: 18px;
 }
 
+.input-header {
+    font-size: 28px;
+    padding: 5px;
+}
+
 .done{
     height: 80%;
     width: 40%;
@@ -138,6 +143,8 @@ html, body {
     text-align: justify;
 
     padding: 15px;
+
+    line-break: auto;
 }
 
 .taskDiv {

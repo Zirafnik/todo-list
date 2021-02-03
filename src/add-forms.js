@@ -13,6 +13,11 @@ function EVaddProjBtn() {
             inputDiv.classList.add('inputProjDiv');
             headerWrap.after(inputDiv);
 
+            let header= document.createElement('h2');
+            header.classList.add('input-header');
+            header.textContent= 'Add a project:'
+            inputDiv.appendChild(header);
+
             let titleInput= document.createElement('input');
             titleInput.setAttribute('type', 'text');
             titleInput.setAttribute('placeholder', 'Title');
@@ -62,6 +67,11 @@ function EVaddTaskBtn() {
             let inputDiv= document.createElement('div');
             inputDiv.classList.add('inputTaskDiv');
             headerWrap.after(inputDiv);
+
+            let header= document.createElement('h2');
+            header.classList.add('input-header');
+            header.textContent= 'Add a task:'
+            inputDiv.appendChild(header);
 
             let nameInput= document.createElement('input');
             nameInput.classList.add('inputElem');
