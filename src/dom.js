@@ -107,10 +107,10 @@ function addTaskElement(taskObj) {
     })
 
 
-    //use svg to load** 
-    //change CSS to change color of svg on hover**
-    let deleteBtn= document.createElement('svg');
+    //SVG delete button
+    let deleteBtn= document.createElement('button');
     deleteBtn.classList.add('deleteBtn');
+
     deleteBtn.addEventListener('click', function() {
         let tasks= document.getElementById('tasks');
         tasks.removeChild(task);

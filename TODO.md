@@ -1,8 +1,8 @@
--svg
-
 -local storage
 
 -delete projects
+
+-README
 
  FUTURE DEV:
  -edit project
