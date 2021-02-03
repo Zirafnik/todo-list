@@ -31,8 +31,6 @@ saveProjectToStorage(food);
 EVaddProjBtn();
 EVaddTaskBtn();
 
-console.log(sport);
-
 
 setFirstCurrentProject(projectStorage[0]);
 setFirstCurrentProjDiv();

@@ -69,11 +69,9 @@ function addTaskElement(taskObj) {
     let over= false;
     completeBtn.addEventListener('mouseover', function() {
         over=true;
-        console.log(over);
     })
     completeBtn.addEventListener('mouseleave', function() {
         over=false;
-        console.log(over);
     })
 
     task.appendChild(completeBtn);

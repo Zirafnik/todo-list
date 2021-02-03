@@ -110,7 +110,7 @@ function EVaddTaskBtn() {
             submit.textContent= 'Add';
             submit.addEventListener('click', function() {
                 let objTask= createTask(nameInput.value, dueDate.value, priority.value, desription.value, false);
-                console.log(currentProject);
+                
                 addTaskToProject(currentProject, objTask);
 
                 addTaskElement(objTask);
