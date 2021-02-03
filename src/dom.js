@@ -59,6 +59,7 @@ function addTaskElement(taskObj) {
 
     let completeBtn= document.createElement('button');
     completeBtn.textContent= 'Done';
+    completeBtn.classList.add('done');
     completeBtn.addEventListener('click', function() {
         task.style.textDecoration= 'line-through';
         task.classList.add('completed');

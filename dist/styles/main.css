@@ -119,6 +119,19 @@ html, body {
     font-size: 18px;
 }
 
+.done{
+    height: 80%;
+    width: 40%;
+
+    justify-self: center;
+    align-self: center;
+
+    font-size: 18px;
+
+    text-align: center;
+    line-height: 50%;
+}
+
 .description {
     width: auto;
 

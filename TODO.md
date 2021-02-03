@@ -9,5 +9,3 @@
 -local storage
 
 -edit && delete projects
-
--done button ? checkmark?
