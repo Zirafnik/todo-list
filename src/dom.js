@@ -44,6 +44,7 @@ function addProjectElement(projectObj) {
     //delete button
     let deleteBtn= document.createElement('button');
     deleteBtn.classList.add('deleteBtn');
+    deleteBtn.classList.add('proj-deleteBtn');
 
     deleteBtn.addEventListener('click', function() {
         //delete proj from storage
