@@ -82,6 +82,7 @@ html, body {
     width: auto;
 
     padding: 15px;
+    margin: 15px;
 
     display: flex;
     flex-direction: column;
@@ -105,6 +106,7 @@ html, body {
     border: 2px solid black;
     border-radius: 10px;
     padding: 20px;
+    margin: 15px;
 
     background-color: gray;
 }
