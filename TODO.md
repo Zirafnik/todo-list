@@ -1,7 +1,5 @@
 -README
 
--change default obj
-
 -task update status
 
  FUTURE DEV:

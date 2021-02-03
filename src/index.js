@@ -9,20 +9,23 @@ EVaddProjBtn();
 EVaddTaskBtn();
 
 if(projectStorage.length == 0) {
-let sport= createProject('sport');
-saveProjectToStorage(sport);
+    let defaultProj= createProject('Default');
+    saveProjectToStorage(defaultProj);
 
-let football= createTask('football', 'ball with foot', 'wednesday', 'urgent', false);
-let basketball= createTask('basket', 'ball in hoop', 'saturday', 'non-urgent', false);
+    let demoTask1= createTask('demoTask', '2021-01-01', 'urgent', 'This is an example task', false);
+    let demoTask2= createTask('demoTask2', '2021-02-02', 'very urgent', 'This is another example task', false);
+    let demoTask3= createTask('demoTask3', '2021-03-03', 'non-urgent', 'Another example, this one non-urgent', false);
 
-addTaskToProject(sport, football);
-addTaskToProject(sport, basketball);
+    addTaskToProject(defaultProj, demoTask1);
+    addTaskToProject(defaultProj, demoTask2);
+    addTaskToProject(defaultProj, demoTask3);
 
 
-let food= createProject('food');
-saveProjectToStorage(food);
-let burek= createTask('burek', 'sirov', 'tuesday', 'urgetn', false);
-addTaskToProject(food, burek);
+    let anotherProj= createProject('another');
+    saveProjectToStorage(anotherProj);
+
+    let demoTask4= createTask('demoTask4', '2021-04-04', 'urgent', 'Another list example', false);
+    addTaskToProject(anotherProj, demoTask4);
 }
 
 
