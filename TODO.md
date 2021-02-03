@@ -4,8 +4,6 @@
 
 -delete projects
 
--description --> textarea
-
  FUTURE DEV:
  -edit project
  -edit task

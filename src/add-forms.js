@@ -105,10 +105,11 @@ function EVaddTaskBtn() {
             inputDiv.appendChild(priority);
 
 
-            let desription= document.createElement('input');
+            let desription= document.createElement('textarea');
             desription.classList.add('inputElem');
             desription.classList.add('description');
-            desription.setAttribute('type', 'text');
+            desription.setAttribute('rows', '3');
+            desription.setAttribute('cols', '50');
             desription.setAttribute('placeholder', 'description');
             inputDiv.appendChild(desription);
 
