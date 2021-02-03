@@ -2,8 +2,6 @@
     -edit task**
     -(ability to move tasks around, within project)
 
--task description style
-
 -form titles
 
 -svg
