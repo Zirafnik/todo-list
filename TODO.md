@@ -1,6 +1,3 @@
--create.js --> objects.js**
--ev.js to forms.js**
-
 -task EV:
     -edit task**
     -(ability to move tasks around, within project)

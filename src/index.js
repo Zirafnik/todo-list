@@ -1,6 +1,6 @@
-import {createProject, createTask, addTaskToProject} from './create';
+import {createProject, createTask, addTaskToProject} from './objects';
 import {addProjectElement, changeTaskHeader, addTaskElement, currentProject, setFirstCurrentProject, setFirstCurrentProjDiv} from './dom';
-import {EVaddProjBtn, EVaddTaskBtn} from './event-listener'
+import {EVaddProjBtn, EVaddTaskBtn} from './add-forms'
 import {projectStorage, saveProjectToStorage} from './storage'
 
 let sport= createProject('sport');

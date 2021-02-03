@@ -1,5 +1,5 @@
 import {addProjectElement, addTaskElement, currentProject} from './dom'
-import {createProject, createTask, addTaskToProject} from './create';
+import {createProject, createTask, addTaskToProject} from './objects';
 import {saveProjectToStorage} from './storage'
 
 function EVaddProjBtn() {
