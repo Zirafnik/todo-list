@@ -120,7 +120,11 @@ html, body {
 }
 
 .description {
+    width: auto;
 
+    text-align: justify;
+
+    padding: 15px;
 }
 
 .taskDiv {
