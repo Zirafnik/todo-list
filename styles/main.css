@@ -213,10 +213,9 @@ button {
     justify-self: center;
 }
 
-svg:hover {
-    fill: red;
-  }
-  
+.deleteBtn:hover {
+    background-image: url('../images/trash-hover.svg');
+}
 
 .description {
     grid-area: desc;
