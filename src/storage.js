@@ -51,4 +51,14 @@ function removeTaskFromStorage(task, currentProject) {
     updateLocalStorage();
 }
 
-export {getLocalStorage, saveProjectToStorage, addTaskToProject, deleteProject, removeTaskFromStorage, projectStorage};
+function updateTaskStatus(task, project) {
+    let projIndex= projectStorage.indexOf(project);
+    console.log(projIndex);
+    let taskIndex= projectStorage[projIndex].tasks.indexOf(task);
+    console.log(taskIndex);
+    projectStorage[projIndex]['tasks'][taskIndex].status = true;
+
+    updateLocalStorage();
+}
+
+export {getLocalStorage, saveProjectToStorage, addTaskToProject, deleteProject, removeTaskFromStorage, updateTaskStatus, projectStorage};

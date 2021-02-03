@@ -1,4 +1,4 @@
-import {deleteProject, removeTaskFromStorage} from './storage'
+import {deleteProject, removeTaskFromStorage, updateTaskStatus} from './storage'
 
 let currentProject= null;
 let currentDiv= null;
@@ -81,22 +81,25 @@ function addTaskElement(taskObj) {
     task.classList.add('taskDiv');
 
     //urgency color background
-    if(taskObj.priority=='very urgent') {
-        task.classList.add('very-urgent');
+    if(taskObj.status== true) {
+        task.classList.add('completed');
     } else if(taskObj.priority=='urgent') {
         task.classList.add('urgent');
     } else if(taskObj.priority=='non-urgent') {
         task.classList.add('non-urgent');
+    } else if(taskObj.priority=='very urgent') {
+        task.classList.add('very-urgent');
     }
 
     let completeBtn= document.createElement('button');
     completeBtn.textContent= 'Done';
     completeBtn.classList.add('done');
     completeBtn.addEventListener('click', function() {
+
+        updateTaskStatus(taskObj, currentProject);
+
         task.style.textDecoration= 'line-through';
         task.classList.add('completed');
-
-        taskObj.status= true;
     })
 
     let over= false;
